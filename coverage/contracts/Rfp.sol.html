@@ -1,0 +1,1190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\Rfp.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> Rfp.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.65% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>59/63</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">55.77% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>29/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.45% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>42/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>95/100</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity &gt;= 0.5.2;
+pragma experimental ABIEncoderV2;
+contract Rfp { // RFP
+    struct RfpReg { // RfpReg
+        uint id;
+        uint area;
+        string city;
+        string state;
+        uint rfpPrice;
+        uint rfpssId;
+        uint physicalSurveyNumber;
+        string ipfsHash;
+        string document;
+    }
+&nbsp;
+    struct DevAgency{ //DevAgency
+        address id;
+        string name;
+        uint age;
+        string city;
+        string aadharNumber;
+        string panNumber;
+        string document;
+        string email;
+    }
+&nbsp;
+    struct Shq{ // Shq
+        address id;
+        string name;
+        uint age;
+        string aadharNumber;
+        string panNumber;
+        string rfpssOwned;
+        string document;
+    }
+&nbsp;
+    struct ContractAdmin { // Admin
+        uint id;
+        string name;
+        uint age; 
+        string designation;
+    }
+&nbsp;
+    struct BidRequest{ //BidRequest
+        uint reqId;
+        address shqqId;
+        address agencyyId;
+        uint rfpssId;
+        // bool requestStatus;
+        // bool requested;
+    }
+&nbsp;
+    //key value pairs
+    mapping(uint =&gt; RfpReg) public rfps;
+    mapping(uint =&gt; ContractAdmin) public AdminMapping;
+    mapping(address =&gt; Shq) public ShqMapping;
+    mapping(address =&gt; DevAgency) public AgencyMapping;
+    mapping(uint =&gt; BidRequest) public BidsMapping;
+&nbsp;
+    mapping(address =&gt; bool) public RegisteredAddressMapping;
+    mapping(address =&gt; bool) public RegisteredShqMapping;
+    mapping(address =&gt; bool) public RegisteredAgencyMapping;
+    mapping(address =&gt; bool) public ShqVerification;
+    mapping(address =&gt; bool) public ShqRejection;
+    mapping(address =&gt; bool) public AgencyVerification;
+    mapping(address =&gt; bool) public AgencyRejection;
+    mapping(uint =&gt; bool) public RfpVerification;
+    mapping(uint =&gt; address) public RfpOwner;
+    mapping(uint =&gt; bool) public RequestStatus;
+    mapping(uint =&gt; bool) public RequestedRfp;
+    mapping(uint =&gt; bool) public PaymentReceived;
+&nbsp;
+    address public RfpAdmin;
+    address[] public shqList;
+    address[] public agencyList;
+&nbsp;
+    uint public rfpCount;
+    uint public adminCount;
+    uint public agencyCount;
+    uint public shqCount;
+    uint public requestsCount;
+&nbsp;
+    event Registration(address _registrationId);
+    event AddingRfp(uint indexed _rfpId);
+    event Rfprequested(address _shqId);
+    event requestApproved(address _agencyId);
+    event Verified(address _id);
+    event Rejected(address _id);
+&nbsp;
+    constructor() public{
+        RfpAdmin = msg.sender ;
+        addAdmin("Admin 1", 31, "Admin Manager");
+    }
+&nbsp;
+    // addAdmin
+    function addAdmin(string memory _name, uint _age, string memory _designation) private  {
+        adminCount++;
+        AdminMapping[adminCount] = ContractAdmin(adminCount, _name, _age, _designation);
+    }
+&nbsp;
+    // getRfpCount
+    function getRfpCount() public view returns (uint) {
+        return rfpCount;
+    }
+&nbsp;
+    // getAgencyCount
+    function getAgencyCount() public view returns (uint) {
+        return shqCount;
+    }
+&nbsp;
+    // getShqCount
+    function getShqCount() public view returns (uint) {
+        return agencyCount;
+    }
+&nbsp;
+    // getBidCount
+    function getBidCount() public view returns (uint) {
+        return requestsCount;
+    }
+&nbsp;
+    function getArea(uint i) public view returns (uint) {
+        return rfps[i].area;
+    }
+    function getCity(uint i) public view returns (string memory) {
+        return rfps[i].city;
+    }
+     function getState(uint i) public view returns (string memory) {
+        return rfps[i].state;
+    }
+    // function getStatus(uint i) public view returns (bool) {
+    //     return rfps[i].verificationStatus;
+    // }
+    function getPrice(uint i) public view returns (uint) {
+        return rfps[i].rfpPrice;
+    }
+    function getPID(uint i) public view returns (uint) {
+        return rfps[i].rfpssId;
+    }
+    function getSurveyNumber(uint i) public view returns (uint) {
+        return rfps[i].physicalSurveyNumber;
+    }
+    function getImage(uint i) public view returns (string memory) {
+        return rfps[i].ipfsHash;
+    }
+    function getDocument(uint i) public view returns (string memory) {
+        return rfps[i].document;
+    }
+    
+    function getRfpOwner(uint id) public view returns (address) {
+        return RfpOwner[id];
+    }
+&nbsp;
+    // verifyShq
+    function verifyShq(address _shqId) public{
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isAdmin(msg.sender));
+&nbsp;
+        ShqVerification[_shqId] = true;
+        emit Verified(_shqId);
+    }
+    
+    // rejectShq 
+    function rejectShq(address _shqId) public{
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isAdmin(msg.sender));
+&nbsp;
+        ShqRejection[_shqId] = true;
+        emit Rejected(_shqId);
+    }
+&nbsp;
+    // verifyAgency
+    function verifyAgency(address _agencyId) public{
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isAdmin(msg.sender));
+&nbsp;
+        AgencyVerification[_agencyId] = true;
+        emit Verified(_agencyId);
+    }
+    // rejectAgency
+    function rejectAgency(address _agencyId) public{
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isAdmin(msg.sender));
+&nbsp;
+        AgencyRejection[_agencyId] = true;
+        emit Rejected(_agencyId);
+    }
+    
+    // verifyRfp
+    function verifyRfp(uint _rfpId) public{
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isAdmin(msg.sender));
+&nbsp;
+        RfpVerification[_rfpId] = true;
+    }
+&nbsp;
+    // isRfpVerified
+    function isRfpVerified(uint _id) public view returns (bool) {
+        if(RfpVerification[_id]){
+            return true;
+        }
+    }
+&nbsp;
+    
+    function isVerified(address _id) public view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(ShqVerification[_id] || AgencyVerification[_id]){
+            return true;
+        }
+    }
+&nbsp;
+    function isRejected(address _id) public view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(ShqRejection[_id] || <span class="branch-1 cbranch-no" title="branch not covered" >AgencyRejection[_id]</span>){
+            return true;
+        }
+    }
+&nbsp;
+    // isAgency
+    function isAgency(address _id) public view returns (bool) {
+        if(RegisteredShqMapping[_id]){
+            return true;
+        }
+    }
+&nbsp;
+    // isAdmin
+    function isAdmin(address _id) public view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(RfpAdmin == _id){
+            return true;
+        }else{
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    // isShq
+    function isShq(address _id) public view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(RegisteredAgencyMapping[_id] || RegisteredShqMapping[_id] ){
+            return true;
+        }
+    }
+&nbsp;
+    function isRegistered(address _id) public view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(RegisteredAddressMapping[_id]){
+            return true;
+        }
+    }
+&nbsp;
+    // addRfp
+    function addRfp(uint _area, string memory _city,string memory _state, uint rfpPrice, uint _propertyPID,uint _surveyNum,string memory _ipfsHash, string memory _document) public {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require((isShq(msg.sender)) &amp;&amp; (isVerified(msg.sender)));
+        rfpCount++;
+        rfps[rfpCount] = RfpReg(rfpCount, _area, _city, _state, rfpPrice,_propertyPID, _surveyNum, _ipfsHash, _document);
+        RfpOwner[rfpCount] = msg.sender;
+        // emit AddingRfp(rfpCount);
+    }
+&nbsp;
+    //registration of shhq
+    // registerShq
+    function registerShq(string memory _name, uint _age, string memory _aadharNumber, string memory _panNumber, string memory _rfpOwned, string memory _document) public {
+        //require that Shq is not already registered
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(!RegisteredAddressMapping[msg.sender]);
+&nbsp;
+        RegisteredAddressMapping[msg.sender] = true;
+        RegisteredShqMapping[msg.sender] = true ;
+        agencyCount++;
+        ShqMapping[msg.sender] = Shq(msg.sender, _name, _age, _aadharNumber,_panNumber, _rfpOwned, _document);
+        shqList.push(msg.sender);
+        emit Registration(msg.sender);
+    }
+&nbsp;
+    // updateShq
+    function updateShq(string memory _name, uint _age, string memory _aadharNumber, string memory _panNumber, string memory _rfpOwned) public {
+        //require that Shq is already registered
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(RegisteredAddressMapping[msg.sender] &amp;&amp; (ShqMapping[msg.sender].id == msg.sender));
+&nbsp;
+        ShqMapping[msg.sender].name = _name;
+        ShqMapping[msg.sender].age = _age;
+        ShqMapping[msg.sender].aadharNumber = _aadharNumber;
+        ShqMapping[msg.sender].panNumber = _panNumber;
+        ShqMapping[msg.sender].rfpssOwned = _rfpOwned;
+&nbsp;
+    }
+    // getShq
+    function getShq() public view returns( address [] memory ){
+        return(shqList);
+    }
+&nbsp;
+    // getShqDetails
+    function getShqDetails(address i) public view returns (string memory, uint, string memory, string memory, string memory, string memory) {
+        return (ShqMapping[i].name, ShqMapping[i].age, ShqMapping[i].aadharNumber, ShqMapping[i].panNumber, ShqMapping[i].rfpssOwned, ShqMapping[i].document);
+    }
+&nbsp;
+    // registerAgency
+    function registerAgency(string memory _name, uint _age, string memory _city, string memory _aadharNumber, string memory _panNumber, string memory _document, string memory _email) public {
+        //require that DevAgency is not already registered
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(!RegisteredAddressMapping[msg.sender]);
+&nbsp;
+        RegisteredAddressMapping[msg.sender] = true;
+        RegisteredAgencyMapping[msg.sender] = true ;
+        shqCount++;
+        AgencyMapping[msg.sender] = DevAgency(msg.sender, _name, _age, _city, _aadharNumber, _panNumber, _document, _email);
+        agencyList.push(msg.sender);
+&nbsp;
+        emit Registration(msg.sender);
+    }
+&nbsp;
+    // updateAgency
+    function updateAgency(string memory _name,uint _age, string memory _city,string memory _aadharNumber, string memory _email, string memory _panNumber) public {
+        //require that DevAgency is already registered
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(RegisteredAddressMapping[msg.sender] &amp;&amp; (AgencyMapping[msg.sender].id == msg.sender));
+&nbsp;
+        AgencyMapping[msg.sender].name = _name; 
+        AgencyMapping[msg.sender].age = _age;
+        AgencyMapping[msg.sender].city = _city;
+        AgencyMapping[msg.sender].aadharNumber = _aadharNumber;
+        AgencyMapping[msg.sender].email = _email;
+        AgencyMapping[msg.sender].panNumber = _panNumber;
+        
+    }
+&nbsp;
+    // getAgency
+    function getAgency() public view returns( address [] memory ){
+        return(agencyList);
+    }
+&nbsp;
+    // getAgencyDetails
+    function getAgencyDetails(address i) public view returns ( string memory,string memory, string memory, string memory, string memory, uint, string memory) {
+        return (AgencyMapping[i].name,AgencyMapping[i].city , AgencyMapping[i].panNumber, AgencyMapping[i].document, AgencyMapping[i].email, AgencyMapping[i].age, AgencyMapping[i].aadharNumber);
+    }
+&nbsp;
+    // requestBid
+    function requestBid(address _shqId, uint _rfpId ) public{
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isShq(msg.sender) &amp;&amp; isVerified(msg.sender));
+        
+        requestsCount++;
+        BidsMapping[requestsCount] = BidRequest(requestsCount, _shqId, msg.sender, _rfpId);
+        RequestStatus[requestsCount] = false;
+        RequestedRfp[requestsCount] = true;
+&nbsp;
+        emit Rfprequested(_shqId);
+    }
+&nbsp;
+    // getBidDetails
+    function getBidDetails (uint i) public view returns (address, address, uint, bool) {
+        return(BidsMapping[i].shqqId, BidsMapping[i].agencyyId, BidsMapping[i].rfpssId, RequestStatus[i]);
+    }
+&nbsp;
+    function isRequested(uint _id) public view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(RequestedRfp[_id]){
+            return true;
+        }
+    }
+&nbsp;
+    function isApproved(uint _id) public view returns (bool) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(RequestStatus[_id]){
+            return true;
+        }
+    }
+&nbsp;
+    function approveRequest(uint _reqId) public {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require((isAgency(msg.sender)) &amp;&amp; (isVerified(msg.sender)));
+       
+        RequestStatus[_reqId] = true;
+&nbsp;
+    }
+&nbsp;
+    function RfpOwnershipTransfer(uint _rfpId, address _newOwner) public{
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(isAdmin(msg.sender));
+&nbsp;
+        RfpOwner[_rfpId] = _newOwner;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function isPaid(uint _rfpId) public view returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >        if(PaymentReceived[_rfpId]){</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function payment(address payable _receiver, uint _rfpId) public payable {</span>
+        PaymentReceived[_rfpId] = true;
+<span class="cstat-no" title="statement not covered" >        _receiver.transfer(msg.value)</span>;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu May 09 2024 11:31:55 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
